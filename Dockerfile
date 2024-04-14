@@ -12,8 +12,8 @@ ENV	DEBCONF_NONINTERACTIVE_SEEN="true" \
 	TZ="Etc/UTC" \
 	TERM="xterm" \
 	PHP_VERS="7.4" \
-	ZM_VERS="1.36" \
-	OPENCV_VERS="4.5.3" \
+	ZM_VERS="master" \
+	OPENCV_VERS="4.9.0" \
 	PUID="99" \
 	PGID="100"
 

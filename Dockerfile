@@ -1,6 +1,6 @@
 FROM phusion/baseimage:master as builder
 
-LABEL maintainer="dlandon"
+LABEL maintainer="kilodelta1"
 
 ENV	DEBCONF_NONINTERACTIVE_SEEN="true" \
 	DEBIAN_FRONTEND="noninteractive" \

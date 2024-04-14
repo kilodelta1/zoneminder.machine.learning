@@ -1,0 +1,25 @@
+version: '3'
+services:
+  zoneminder:
+    build: .
+    container_name: Zoneminder-latest
+    privileged: false
+    shm_size: 8G
+    ports:
+      - '8443:443/tcp'
+      - '9010:9000/tcp'
+      - '8088:80/tcp'
+    environment:
+      - TZ=Europe/Vilnius
+      - PUID=$PGID
+      - PGID=$PGID
+      - MULTI_PORT_START=0
+      - MULTI_PORT_END=0
+    volumes:
+      - /mnt/Zoneminder:/config:rw
+      # - /media/serveris/data/zoneminder_data:/config:rw
+
+      - /mnt/Zoneminder/data:/var/cache/zoneminder:rw
+      - /media/serveris/data/zoneminder_data/data:/var/ssd_storage:rw
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
